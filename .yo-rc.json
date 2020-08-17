@@ -1,0 +1,16 @@
+{
+  "generator-easy-ui5": {
+    "projectname": "OpenFlow",
+    "namespace": "pt.chain",
+    "platform": "Static webserver",
+    "viewtype": "XML",
+    "viewname": "MainView",
+    "ui5libs": "Local resources (OpenUI5)",
+    "newdir": true,
+    "namespaceURI": "pt/chain",
+    "uimodules": [
+      "uimodule"
+    ],
+    "setupCompleted": true
+  }
+}
