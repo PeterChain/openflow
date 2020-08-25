@@ -28,10 +28,9 @@
   },
   "sap.ui5": {
     "rootView": {
-      "viewName": "pt.chain.OpenFlow.view.MainView",
+      "viewName": "pt.chain.OpenFlow.view.App",
       "type": "XML",
-      "async": true,
-      "id": "idAppControl"
+      "async": true
     },
     "dependencies": {
       "minUI5Version": "1.60.0",
@@ -72,18 +71,29 @@
       "routes": [
         {
           "name": "RouteMainView",
-          "pattern": "RouteMainView",
+          "pattern": "",
           "target": [
             "TargetMainView"
+          ]
+        },
+        {
+          "name": "RouteFlowView",
+          "pattern": "case/{caseCategory}-{caseVersion}",
+          "target": [
+            "FlowView"
           ]
         }
       ],
       "targets": {
         "TargetMainView": {
           "viewType": "XML",
-          "viewLevel": 1,
-          "viewId": "idAppControl",
+          "viewId": "mainView",
           "viewName": "MainView"
+        },
+        "FlowView": {
+          "viewType": "XML",
+          "viewId": "flowView",
+          "viewName": "FlowView"
         }
       }
     }

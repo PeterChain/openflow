@@ -1,0 +1,9 @@
+ <mvc:View controllerName="pt.chain.OpenFlow.controller.App"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc">
+  <App id="idAppControl">
+    <pages>
+    </pages>
+  </App>
+</mvc:View>

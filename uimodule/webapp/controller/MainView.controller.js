@@ -3,5 +3,10 @@ sap.ui.define([
 ], function(Controller) {
   "use strict";
 
-  return Controller.extend("pt.chain.OpenFlow.controller.MainView", {});
+  return Controller.extend("pt.chain.OpenFlow.controller.MainView", {
+
+    displayDiag: function(oEvent) {
+      this.navTo("RouteFlowView", {  caseCategory:"Z001", caseVersion:"001" })
+    }
+  });
 });

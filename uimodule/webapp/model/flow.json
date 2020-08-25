@@ -1,0 +1,78 @@
+{
+    "steps": [
+        {
+            "activity": "001",
+            "description": "Start activity",
+            "type": "Auto"
+        },
+        {
+            "activity": "002",
+            "description": "Register protocol",
+            "type": "Auto"
+        },
+        {
+            "activity": "003",
+            "description": "Protocol registered",
+            "type": "Auto"
+        },
+        {
+            "activity": "004",
+            "description": "Evaluate protocol",
+            "type": "Manual"
+        },
+        {
+            "activity": "005",
+            "description": "Protocol is under review",
+            "type": "Auto"
+        },
+        {
+            "activity": "006",
+            "description": "End activity",
+            "type": "Auto"
+        }
+    ],
+    "sequence": [
+        {
+            "seq": "010",
+            "fromId": "001",
+            "fromVersion": "001",
+            "toId": "002",
+            "toVersion": "001"
+        },
+        {
+            "seq": "020",
+            "fromId": "002",
+            "fromVersion": "001",
+            "toId": "003",
+            "toVersion": "001"
+        },
+        {
+            "seq": "030",
+            "fromId": "003",
+            "fromVersion": "001",
+            "toId": "004",
+            "toVersion": "001"
+        },
+        {
+            "seq": "040",
+            "fromId": "003",
+            "fromVersion": "001",
+            "toId": "005",
+            "toVersion": "001"
+        },
+        {
+            "seq": "050",
+            "fromId": "005",
+            "fromVersion": "001",
+            "toId": "006",
+            "toVersion": "001"
+        },
+        {
+            "seq": "060",
+            "fromId": "006",
+            "fromVersion": "001",
+            "toId": "002",
+            "toVersion": "001"
+        }
+    ]
+}

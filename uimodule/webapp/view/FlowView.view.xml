@@ -1,0 +1,16 @@
+ <mvc:View xmlns:core="sap.ui.core" controllerName="pt.chain.OpenFlow.controller.FlowView"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+  <Page title="{i18n>flowTitle}" navButtonPress="onNavBack" showNavButton="true" showHeader="true">
+    <content>
+      <ObjectHeader condensed="true" title="{i18n>case} {case>/category}">
+            <ObjectAttribute text="{i18n>version} {case>/version}"/>
+      </ObjectHeader>
+      <VBox alignItems="Stretch">
+        <html:div id="graphDiv" class="mermaid sapUiMediumMarginBeginEnd"></html:div>
+      </VBox>
+    </content>
+  </Page>
+</mvc:View>

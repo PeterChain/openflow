@@ -1,0 +1,17 @@
+[
+    {
+        "case": "Z001",
+        "description": "Z 0001 Case category",
+        "version": "001"
+    },
+    {
+        "case": "Z002",
+        "description": "Z 0002 Case category",
+        "version": "001"
+    },
+    {
+        "case": "Y002",
+        "description": "Y dummy case",
+        "version": "001"
+    }
+]

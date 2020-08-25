@@ -61,8 +61,16 @@ sap.ui.define([
       if (sPreviousHash !== undefined) {
         window.history.back();
       } else {
-        this.getRouter().navTo("appHome", {}, true /*no history*/ );
+        this.getRouter().navTo("RouteMainView", {}, true /*no history*/ );
       }
+    },
+
+    /**
+     * Returns a global model instance
+     * @param {String} sModel Model name in manifest
+     */
+    getComponentModel: function(sModel) {
+      return this.getOwnerComponent().getModel(sModel);
     }
 
   });

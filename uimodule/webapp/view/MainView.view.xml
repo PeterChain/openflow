@@ -2,11 +2,15 @@
   displayBlock="true"
   xmlns="sap.m"
   xmlns:mvc="sap.ui.core.mvc">
-  <App id="idAppControl" >
-    <pages>
-      <Page title="{i18n>title}">
-        <content></content>
-      </Page>
-    </pages>
-  </App>
+  <Page title="{i18n>appTitle}">
+    <content>
+      <VBox alignItems="Center" alignContent="Center" >
+        <Label text="{i18n>case}" labelFor="caseId"/>
+        <Input id="caseId" maxLength="4"></Input>
+        <Label text="{i18n>version}" labelFor="caseVersion"/>
+        <Input id="caseVersion" type="Number" maxLength="3"></Input>
+        <Button icon="sap-icon://action" text="{i18n>displayDiag}" press="displayDiag"></Button>
+      </VBox>
+    </content>
+  </Page>
 </mvc:View>
