@@ -1,15 +1,47 @@
  <mvc:View controllerName="pt.chain.OpenFlow.controller.MainView"
   displayBlock="true"
   xmlns="sap.m"
+  class="sapUiSizeCompact"
+  xmlns:f="sap.ui.layout.form"
+  xmlns:core="sap.ui.core"
   xmlns:mvc="sap.ui.core.mvc">
   <Page title="{i18n>appTitle}">
     <content>
-      <VBox alignItems="Center" alignContent="Center" >
-        <Label text="{i18n>case}" labelFor="caseId"/>
-        <Input id="caseId" maxLength="4"></Input>
-        <Label text="{i18n>version}" labelFor="caseVersion"/>
-        <Input id="caseVersion" type="Number" maxLength="3"></Input>
-        <Button icon="sap-icon://action" text="{i18n>displayDiag}" press="displayDiag"></Button>
+      <VBox alignItems="Center" 
+            alignContent="Center" 
+            class="sapUiSmallMargin" >
+        <f:SimpleForm layout="ResponsiveGridLayout" 
+                      maxContainerCols="1"
+            columnsL="1" columnsM="2" columnsXL="1">
+          <f:content>
+            <Label text="{i18n>case}" 
+                   labelFor="caseCat"/>
+            <Input id="caseCat"
+                   maxLength="4"
+                   showSuggestion="true"
+                   showValueHelp="true"
+                   valueLiveUpdate="true"
+                   value="{entry>/caseCat}"
+                   required="true"
+                   suggestionItems="{categories>/categories}">
+              <suggestionItems>
+                <core:Item text="{categories>case} - {categories>description}" />
+              </suggestionItems>
+            </Input>
+            <Label text="{i18n>version}"
+                   labelFor="caseVersion"/>
+            <Input id="caseVersion" 
+                   type="Number" 
+                   valueLiveUpdate="true"
+                   required="true"
+                   value="{entry>/caseVersion}">
+            </Input>
+          </f:content>
+        </f:SimpleForm>
+        <Button icon="sap-icon://action" 
+                text="{i18n>displayDiag}" 
+                press="displayDiag">
+        </Button>
       </VBox>
     </content>
   </Page>

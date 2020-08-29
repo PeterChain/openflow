@@ -88,7 +88,7 @@ sap.ui.define([
          */
         _formatNode: function(oStep) {
             if (this._oChartOptions.displayText) {
-                return `${ oStep.activity }("${ oStep.activity }: ${ oStep.description }")`;
+                return `${ oStep.activity }("${ oStep.activity }<br/> ${ oStep.description }")`;
             } else {
                 return `${ oStep.activity }`;
             }

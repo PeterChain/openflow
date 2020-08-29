@@ -1,5 +1,7 @@
 # OpenFlow
-Insert the purpose of this project and some intersting infos here
+OpenUI5 app using Mermaid JS for Flowchart generating using a JSON/OData model.
+The purpose is to create a flowchart based on SAP EMMA Case category where each step
+can be a manual or automatic activity.
 
 
 ## Credits
