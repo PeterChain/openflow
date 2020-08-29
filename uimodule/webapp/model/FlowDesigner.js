@@ -43,6 +43,17 @@ sap.ui.define([
             const graphDefinition = this._buildFlowchart();
             console.log(graphDefinition);
 
+            const config = {
+                flowchart:{
+                    diagramPadding:0,
+                    htmlLabels:true,
+                    curve:'linear',
+                },
+                securityLevel:'loose',
+            };
+        
+            mermaid.initialize(config);
+
             const graph = mermaid.mermaidAPI.render('graphDiv', graphDefinition, insertSvg);
         },
 

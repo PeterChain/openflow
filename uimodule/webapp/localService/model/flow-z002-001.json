@@ -1,0 +1,190 @@
+{
+    "steps": [
+        {
+            "activity": "001",
+            "description": "Process started",
+            "type": "Auto"
+        },
+        {
+            "activity": "002",
+            "description": "Initial costs planned",
+            "type": "Auto"
+        },
+        {
+            "activity": "003",
+            "description": "No payment required",
+            "type": "Auto"
+        },
+        {
+            "activity": "004",
+            "description": "Awaiting payment",
+            "type": "Auto"
+        },
+        {
+            "activity": "005",
+            "description": "Receive payment",
+            "type": "Manual"
+        },
+        {
+            "activity": "006",
+            "description": "Awaiting Legal say",
+            "type": "Auto"
+        },
+        {
+            "activity": "007",
+            "description": "Legal pronouncement received",
+            "type": "Auto"
+        },
+        {
+            "activity": "008",
+            "description": "Legal framework: Bill 12-2020",
+            "type": "Auto"
+        },
+        {
+            "activity": "009",
+            "description": "Legal framework: Bill 22-2020",
+            "type": "Auto"
+        },
+        {
+            "activity": "010",
+            "description": "Legal framework: Bill 31-2019",
+            "type": "Auto"
+        },
+        {
+            "activity": "011",
+            "description": "Not authorized",
+            "type": "Auto"
+        },
+        {
+            "activity": "012",
+            "description": "Project approved",
+            "type": "Auto"
+        },
+        {
+            "activity": "013",
+            "description": "Send approval letter",
+            "type": "Auto"
+        }
+    ],
+    "sequence": [
+        {
+            "seq": "010",
+            "fromId": "001",
+            "fromVersion": "001",
+            "toId": "002",
+            "toVersion": "001"
+        },
+        {
+            "seq": "020",
+            "fromId": "002",
+            "fromVersion": "001",
+            "toId": "003",
+            "toVersion": "001"
+        },
+        {
+            "seq": "030",
+            "fromId": "003",
+            "fromVersion": "001",
+            "toId": "004",
+            "toVersion": "001"
+        },
+        {
+            "seq": "040",
+            "fromId": "003",
+            "fromVersion": "001",
+            "toId": "005",
+            "toVersion": "001"
+        },
+        {
+            "seq": "050",
+            "fromId": "005",
+            "fromVersion": "001",
+            "toId": "006",
+            "toVersion": "001"
+        },
+        {
+            "seq": "060",
+            "fromId": "003",
+            "fromVersion": "001",
+            "toId": "006",
+            "toVersion": "001"
+        },
+        {
+            "seq": "070",
+            "fromId": "003",
+            "fromVersion": "001",
+            "toId": "006",
+            "toVersion": "001"
+        },
+        {
+            "seq": "080",
+            "fromId": "006",
+            "fromVersion": "001",
+            "toId": "007",
+            "toVersion": "001"
+        },
+        {
+            "seq": "091",
+            "fromId": "007",
+            "fromVersion": "001",
+            "toId": "008",
+            "toVersion": "001"
+        },
+        {
+            "seq": "092",
+            "fromId": "007",
+            "fromVersion": "001",
+            "toId": "011",
+            "toVersion": "001"
+        },
+        {
+            "seq": "094",
+            "fromId": "007",
+            "fromVersion": "001",
+            "toId": "009",
+            "toVersion": "001"
+        },
+        {
+            "seq": "095",
+            "fromId": "007",
+            "fromVersion": "001",
+            "toId": "010",
+            "toVersion": "001"
+        },
+        {
+            "seq": "101",
+            "fromId": "008",
+            "fromVersion": "001",
+            "toId": "012",
+            "toVersion": "001"
+        },
+        {
+            "seq": "102",
+            "fromId": "009",
+            "fromVersion": "001",
+            "toId": "012",
+            "toVersion": "001"
+        },
+        {
+            "seq": "103",
+            "fromId": "010",
+            "fromVersion": "001",
+            "toId": "012",
+            "toVersion": "001"
+        },
+        {
+            "seq": "104",
+            "fromId": "011",
+            "fromVersion": "001",
+            "toId": "012",
+            "toVersion": "001"
+        },
+        {
+            "seq": "110",
+            "fromId": "012",
+            "fromVersion": "001",
+            "toId": "013",
+            "toVersion": "001"
+        }
+    ]
+}

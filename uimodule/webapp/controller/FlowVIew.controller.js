@@ -28,7 +28,7 @@ sap.ui.define([
                                      version: oParam.caseVersion });
       oModel.refresh(); //Force UI update
 
-      this.getView().setModel(oModel);
+      this.setModel(oModel, "case");
 
       let oFlowModel = new JSONModel();
       oFlowModel.loadData("/sap/bc/openflow/flow", {category: oParam.caseCategory,
