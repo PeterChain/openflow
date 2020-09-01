@@ -13,6 +13,13 @@
     "serve:uimodule": "ui5 serve --config=uimodule/ui5.yaml",
     "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --a --dest uimodule/dist --include-task=generateManifestBundle"
   },
+  "dependencies":{
+    "@openui5/sap.f": "1.71.20",
+    "@openui5/sap.ui.core": "1.71.20",
+    "@openui5/sap.m": "1.71.20",
+    "@openui5/sap.ui.layout": "1.71.20",
+    "@openui5/themelib_sap_belize": "1.71.20"
+  },
   "devDependencies": {
     "shx": "^0.3.2",
     "@ui5/cli": "^2.2.5",
