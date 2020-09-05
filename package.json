@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",
+    "start-mock": "ui5 serve --config=uimodule/ui5.yaml  --open test/indexMock.html",
     "build:ui": "run-s  build:uimodule",
     "test": "run-s lint karma",
     "karma-ci": "karma start karma-ci.conf.js",
@@ -12,6 +13,13 @@
     "lint": "eslint .",
     "serve:uimodule": "ui5 serve --config=uimodule/ui5.yaml",
     "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --a --dest uimodule/dist --include-task=generateManifestBundle"
+  },
+  "dependencies": {
+    "@openui5/sap.ui.core": "1.71.20",
+    "@openui5/sap.f": "1.71.20",
+    "@openui5/sap.m": "1.71.20",
+    "@openui5/sap.ui.layout": "1.71.20",
+    "@openui5/themelib_sap_belize": "1.71.21"
   },
   "devDependencies": {
     "shx": "^0.3.2",

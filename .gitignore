@@ -10,3 +10,4 @@ deployer/resources/
 Makefile*
 mta-*
 approuter/*/webapp/
+uimodule/webapp/localService/model/*.json
