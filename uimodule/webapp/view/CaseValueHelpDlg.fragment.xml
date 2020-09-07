@@ -1,11 +1,11 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
 	<SelectDialog
 		title="{i18n>caseSelection}"
-		items="{categories>/categories}"
-		confirm=".onValueHelpClose"
-		cancel=".onValueHelpClose">
+		items="{/categories}"
+		confirm=".onDialogClosed"
+		cancel=".onDialogClosed">
 		<StandardListItem
-			title="{categories>case} ({categories>version})"
-			description="{categories>description}" />
+			title="{case}-{version}"
+			description="{description}" />
 	</SelectDialog>
 </core:FragmentDefinition>

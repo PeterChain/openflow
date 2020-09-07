@@ -21,6 +21,7 @@
                    showSuggestion="true"
                    showValueHelp="true"
                    valueLiveUpdate="true"
+                   valueHelpRequest=".onCaseSelectDialogPress"
                    value="{entry>/caseCat}"
                    required="true"
                    suggestionItems="{categories>/categories}">

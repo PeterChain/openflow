@@ -1,9 +1,10 @@
 sap.ui.define([
   "pt/chain/OpenFlow/controller/BaseController",
+  "sap/ui/core/Fragment",
   "sap/ui/model/json/JSONModel",
   "sap/m/MessageBox",
   "sap/ui/model/resource/ResourceModel"
-], function(Controller, JSONModel, MessageBox, ResourceModel) {
+], function(Controller, Fragment, JSONModel, MessageBox, ResourceModel) {
   "use strict";
 
   return Controller.extend("pt.chain.OpenFlow.controller.MainView", {
@@ -18,9 +19,6 @@ sap.ui.define([
       this.setModel(new JSONModel({ caseCat: "",
                                     caseVersion: "" }),
                     "entry");
-      const i18nModel = new ResourceModel({
-        bundleName: "pt.chain.OpenFlow.i18n.i18n"
-      });
     },
 
     /**
@@ -30,7 +28,6 @@ sap.ui.define([
     displayDiag: function(oEvent) {
       const oInput = this.getModel("entry");
       const oResourceBundle = this.getResourceBundle();
-      const sError = oResourceBundle.getText("error");
       const sCaseCat = oInput.getProperty("/caseCat");
       const sCaseVersion = oInput.getProperty("/caseVersion");
 
@@ -44,7 +41,7 @@ sap.ui.define([
         return;
       }
 
-      if (!this.key_exists(sCaseCat, sCaseVersion)) {
+      if (!this.keyExists(sCaseCat, sCaseVersion)) {
         MessageBox.error(oResourceBundle.getText("errorNoCaseMatch"));
         return;
       }
@@ -58,7 +55,7 @@ sap.ui.define([
      * @param {String} sCaseCat Case category from UI
      * @param {String} sCaseVersion Case version from UI
      */
-    key_exists: function(sCaseCat, sCaseVersion) {
+    keyExists: function(sCaseCat, sCaseVersion) {
       const aCategories = this.getModel("categories").getData().categories;
       let bKeyExists = false;
 
@@ -70,6 +67,44 @@ sap.ui.define([
       });
 
       return bKeyExists;
+    },
+
+    /**
+     * Displays the dialog for selecting case category and version
+     * @param {Object} oEvent Event object for Dialog
+     */
+    onCaseSelectDialogPress: function (oEvent) {
+			var oButton = oEvent.getSource();
+
+			if (!this._oDialog) {
+				Fragment.load({
+					name: "pt.chain.OpenFlow.view.CaseValueHelpDlg",
+					controller: this
+				}).then(function (oDialog){
+					this._oDialog = oDialog;
+					this._oDialog.setModel(this.getView().getModel("categories"));
+					this._oDialog.open();
+				}.bind(this));
+			} else {
+				this._oDialog.open();
+      }
+    },
+
+    /**
+     * Process the output of the Dialog model (confirm/cancel)
+     * @param {Object} oEvent Event object for Dialog
+     */
+    onDialogClosed: function(oEvent) {
+      const oSelectedItem = oEvent.getParameter("selectedItem");
+      if (!oSelectedItem) return;
+      
+      const sEntry = oSelectedItem.getTitle().substr(0,4),
+            sVersion = oSelectedItem.getTitle().substr(5,6);
+
+      this.setModel(new JSONModel({
+        caseCat: sEntry,
+        caseVersion: sVersion
+      }), "entry");
     }
-  });
+  })
 });
